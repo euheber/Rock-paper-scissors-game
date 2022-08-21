@@ -1,0 +1,225 @@
+/* core */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+  --Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+  --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+  --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+  --Cyan: -hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+  --Radial-Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+  --greyish-white: rgb(219, 219, 219);
+}
+
+.row {
+  display: flex;
+}
+/* core */
+
+/* header */
+
+body {
+  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  height: 100vh;
+  color: var(--greyish-white);
+  overflow: hidden;
+}
+
+header {
+  border: 3px solid var(--Header-Outline);
+  border-radius: 15px;
+  padding: 1rem;
+  justify-content: space-between;
+  width: 50%;
+  margin: 2rem auto 0 auto;
+}
+
+#title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#score {
+  flex-direction: column;
+  background: var(--greyish-white);
+  width: 8rem;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+#score h3 {
+  color: var(--Score-Text);
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+#score h1 {
+  color: var(--Dark-Text);
+}
+
+main {
+  width: 70%;
+  margin: 2rem auto 0 auto;
+}
+
+#options-box {
+  background-image: url(../images/bg-triangle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20rem;
+  width: 20rem;
+  margin: 3rem auto 0 auto;
+  position: relative;
+}
+
+.paper {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border: double 10px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -1rem;
+}
+
+.scissors {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border: double 10px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: -1rem;
+}
+
+.rock {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border: double 10px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper img, .rock img, .scissors img{
+  pointer-events: none
+}
+
+#rules-btn {
+  border: 1px solid var(--Dark-Text);
+  width: 5rem;
+  padding: 0.2rem;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  right: 3rem;
+  bottom: 2rem;
+  cursor: default;
+}
+
+#rule-modal {
+  width: 23rem;
+  height: 20rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 14rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 1s ease;
+  opacity: 1;
+}
+
+#rule-modal.hid {
+  display: none;
+  opacity: 0;
+}
+
+#choices {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#choices .paper,
+#choices .scissors,
+#choices .rock {
+  position: initial;
+  pointer-events: none
+}
+
+#you-picked,
+#house-picked {
+  text-align: center;
+  width: 15rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mockup {
+  background: grey;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 80px;
+}
+
+#result {
+  width: 15rem;
+  height: 5rem;
+  z-index: 99;
+  text-align: center;
+}
+
+.play-again-btn {
+  width: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: 0.5s ease;
+}
+
+.play-again-btn:hover {
+  color: rgb(240, 101, 101);
+  border-radius: 20px;
+}
