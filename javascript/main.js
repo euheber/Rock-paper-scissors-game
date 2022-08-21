@@ -17,15 +17,15 @@ function callOptions() {
   main.innerHTML = `
   <div id="options-box">
   <div class="rock row" onclick="choices('rock')">
-    <img src="/images/icon-rock.svg" alt="Pedra"/>
+    <img src="./images/icon-rock.svg" alt="Pedra"/>
   </div>
 
 <div class="paper row" onclick="choices('paper')">
-  <img src="/images/icon-paper.svg" alt="Papel"/>
+  <img src="./images/icon-paper.svg" alt="Papel"/>
 </div>
 
 <div class="scissors row" onclick="choices('scissors')">
-  <img src="/images/icon-scissors.svg" alt="Tesoura"/>
+  <img src="./images/icon-scissors.svg" alt="Tesoura"/>
 </div>
 </div>
 `
@@ -113,7 +113,7 @@ function choices(c) {
   <div id="you-picked" class="row">
     <h1>You picked</h1>
     <div class="${c} row">
-      <img src="/images/icon-${c}.svg" alt="Papel" />
+      <img src="./images/icon-${c}.svg" alt="Papel" />
     </div>
   </div>
 
@@ -126,7 +126,7 @@ function choices(c) {
     <h1>House picked</h1>
     <div class="mockup">
        <div class="${classe} row">
-             <img src="/images/icon-${classe}.svg" alt="${classe}"/>
+             <img src="./images/icon-${classe}.svg" alt="${classe}"/>
        </div>
     </div>
   </div>
