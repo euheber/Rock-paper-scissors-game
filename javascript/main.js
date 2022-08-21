@@ -2,7 +2,6 @@ const ruleBtn = document.querySelector("#rules-btn")
 const ruleModal = document.querySelector("#rule-modal")
 const main = document.querySelector("main")
 const score = document.querySelector("#points")
-const wl = document.querySelector("#result-title")
 
 let contador = 0
 let classe
